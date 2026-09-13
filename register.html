@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="fr" class="i18n-pending">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.title.register">Inscription · AI INNOVATORS</title>
+  <meta name="description" data-i18n-content="meta.desc.register" content="Rejoins AI INNOVATORS : adhésion gratuite, ouverte à tous les étudiants.">
+  <meta name="theme-color" content="#04060a">
+  <link rel="icon" href="assets/img/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/register.css">
+  <script>
+    document.documentElement.classList.add('js');
+    setTimeout(function () { document.documentElement.classList.remove('i18n-pending'); }, 1500);
+  </script>
+  <noscript><style>html.i18n-pending body { opacity: 1; }</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip"></a>
+
+  <canvas class="atmosphere" data-atmosphere data-density="70" aria-hidden="true"></canvas>
+
+  <header class="site-nav" data-nav>
+    <div class="site-nav__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark"><img class="brand__logo" src="assets/img/logo.webp" alt="" width="42" height="42" onerror="this.parentNode.classList.add('no-logo')"><svg class="brand__leaf" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 28V15" stroke="#8fe3a8" stroke-width="1.5" stroke-linecap="round"/><path d="M16 19c-5 0-8.5-3.4-9-8.5 5 0 8.5 3.4 9 8.5ZM16 15c.5-5 4-8.5 9-9-.1 5-3.6 8.6-9 9Z" stroke="#8fe3a8" stroke-width="1.5" stroke-linejoin="round"/><circle cx="7" cy="10.5" r="1.8" fill="#c9b6ff"/><circle cx="25" cy="6" r="1.8" fill="#c9b6ff"/><circle cx="16" cy="28" r="1.8" fill="#c9b6ff"/></svg></span>
+        <span>AI Innovators</span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-back" href="index.html" data-i18n-aria="nav.back"><span aria-hidden="true">←</span><span class="nav-back__text" data-i18n="nav.back"></span></a>
+        <div class="lang" role="group" data-i18n-aria="a11y.lang">
+          <button type="button" data-lang-btn="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="register">
+    <!-- ============ INTRO ============ -->
+    <section class="register__intro">
+      <p class="eyebrow eyebrow--line rise" data-i18n="reg.eyebrow"></p>
+      <h1 class="display register__title reveal" style="--d:.08s" data-i18n-html="reg.title"></h1>
+      <p class="lead register__lead rise" style="--d:.16s" data-i18n="reg.lead"></p>
+      <template id="tpl-perk">
+        <li class="perk"><span class="perk__i" data-index></span><span data-field="text"></span></li>
+      </template>
+      <ul class="perks rise" style="--d:.24s" data-i18n-list="reg.perks" data-template="tpl-perk"></ul>
+      <p class="register__time rise" style="--d:.3s" data-i18n="reg.time"></p>
+    </section>
+
+    <!-- ============ FORM ============ -->
+    <section class="card rise" style="--d:.2s" aria-labelledby="form-title">
+      <h2 id="form-title" class="visually-hidden" data-i18n="reg.formTitle"></h2>
+
+      <form id="register-form" novalidate>
+        <!-- 01 · You -->
+        <fieldset class="group-set">
+          <legend class="legend"><span class="legend__n">01</span><span data-i18n="f.legend.you"></span></legend>
+          <div class="fields">
+            <div class="field field--full" data-name="fullName">
+              <label class="label" for="fullName"><span data-i18n="f.fullName"></span><span class="req" aria-hidden="true"> *</span></label>
+              <input class="input" id="fullName" name="fullName" type="text" autocomplete="name" maxlength="120" required aria-describedby="fullName-error" data-i18n-placeholder="f.fullName.ph">
+              <p class="field__error" id="fullName-error"></p>
+            </div>
+            <div class="field" data-name="email">
+              <label class="label" for="email"><span data-i18n="f.email"></span><span class="req" aria-hidden="true"> *</span></label>
+              <input class="input" id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="160" required aria-describedby="email-hint email-error" data-i18n-placeholder="f.email.ph">
+              <p class="field__hint" id="email-hint" data-i18n="f.email.hint"></p>
+              <p class="field__error" id="email-error"></p>
+            </div>
+            <div class="field" data-name="phone">
+              <label class="label" for="phone"><span data-i18n="f.phone"></span><span class="req" aria-hidden="true"> *</span></label>
+              <input class="input" id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="25" required aria-describedby="phone-error" data-i18n-placeholder="f.phone.ph">
+              <p class="field__error" id="phone-error"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 02 · Studies -->
+        <fieldset class="group-set">
+          <legend class="legend"><span class="legend__n">02</span><span data-i18n="f.legend.studies"></span></legend>
+          <div class="fields">
+            <div class="field" data-name="studentId">
+              <label class="label" for="studentId"><span data-i18n="f.studentId"></span><span class="req" aria-hidden="true"> *</span></label>
+              <input class="input" id="studentId" name="studentId" type="text" autocomplete="off" maxlength="40" required aria-describedby="studentId-error" data-i18n-placeholder="f.studentId.ph">
+              <p class="field__error" id="studentId-error"></p>
+            </div>
+            <div class="field" data-name="year">
+              <label class="label" for="year"><span data-i18n="f.year"></span><span class="req" aria-hidden="true"> *</span></label>
+              <select class="input" id="year" name="year" required aria-describedby="year-error">
+                <option value="" data-i18n="f.choose"></option>
+                <option value="year-1" data-i18n="f.year.1"></option>
+                <option value="year-2" data-i18n="f.year.2"></option>
+                <option value="year-3" data-i18n="f.year.3"></option>
+                <option value="year-4" data-i18n="f.year.4"></option>
+                <option value="year-5" data-i18n="f.year.5"></option>
+              </select>
+              <p class="field__error" id="year-error"></p>
+            </div>
+            <div class="field field--full" data-name="department">
+              <label class="label" for="department"><span data-i18n="f.department"></span><span class="req" aria-hidden="true"> *</span></label>
+              <select class="input" id="department" name="department" required aria-describedby="department-error">
+                <option value="" data-i18n="f.choose"></option>
+                <option value="cs" data-i18n="f.dep.cs"></option>
+                <option value="engineering" data-i18n="f.dep.engineering"></option>
+                <option value="life-sciences" data-i18n="f.dep.life"></option>
+                <option value="math-physics" data-i18n="f.dep.math"></option>
+                <option value="business" data-i18n="f.dep.business"></option>
+                <option value="design" data-i18n="f.dep.design"></option>
+                <option value="other" data-i18n="f.dep.other"></option>
+              </select>
+              <p class="field__error" id="department-error"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 03 · Interests -->
+        <fieldset class="group-set">
+          <legend class="legend"><span class="legend__n">03</span><span data-i18n="f.legend.interests"></span></legend>
+          <div class="fields">
+            <fieldset class="field field--full" data-name="interests" aria-describedby="interests-hint interests-error">
+              <legend class="label"><span data-i18n="f.interests"></span><span class="req" aria-hidden="true"> *</span></legend>
+              <p class="field__hint" id="interests-hint" data-i18n="f.interests.hint"></p>
+              <div class="chips">
+                <label class="chip"><input type="checkbox" name="interests" value="nature-detective"><span>AI Nature Detective</span></label>
+                <label class="chip"><input type="checkbox" name="interests" value="plant-doctor"><span>Plant Doctor</span></label>
+                <label class="chip"><input type="checkbox" name="interests" value="beach-pollution"><span>AI Beach Pollution Detector</span></label>
+                <label class="chip"><input type="checkbox" name="interests" value="waste-classifier"><span>AI Waste Classifier</span></label>
+                <label class="chip"><input type="checkbox" name="interests" value="green-city"><span>AI Green City</span></label>
+                <label class="chip"><input type="checkbox" name="interests" value="certifications"><span data-i18n="f.int.certs"></span></label>
+              </div>
+              <p class="field__error" id="interests-error"></p>
+            </fieldset>
+
+            <fieldset class="field field--full">
+              <legend class="label"><span data-i18n="f.roles"></span> <span class="opt" data-i18n="f.optional"></span></legend>
+              <div class="chips">
+                <label class="chip"><input type="checkbox" name="roles" value="frontend"><span data-i18n="f.role.frontend"></span></label>
+                <label class="chip"><input type="checkbox" name="roles" value="ai-integration"><span data-i18n="f.role.ai"></span></label>
+                <label class="chip"><input type="checkbox" name="roles" value="ux-ui"><span data-i18n="f.role.ux"></span></label>
+                <label class="chip"><input type="checkbox" name="roles" value="database"><span data-i18n="f.role.database"></span></label>
+                <label class="chip"><input type="checkbox" name="roles" value="research"><span data-i18n="f.role.research"></span></label>
+                <label class="chip"><input type="checkbox" name="roles" value="testing"><span data-i18n="f.role.testing"></span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="field field--full" data-name="experience" aria-describedby="experience-error">
+              <legend class="label"><span data-i18n="f.experience"></span><span class="req" aria-hidden="true"> *</span></legend>
+              <div class="chips chips--radio">
+                <label class="chip"><input type="radio" name="experience" value="beginner"><span data-i18n="f.exp.beginner"></span></label>
+                <label class="chip"><input type="radio" name="experience" value="intermediate"><span data-i18n="f.exp.intermediate"></span></label>
+                <label class="chip"><input type="radio" name="experience" value="advanced"><span data-i18n="f.exp.advanced"></span></label>
+              </div>
+              <p class="field__error" id="experience-error"></p>
+            </fieldset>
+
+            <div class="field field--full">
+              <label class="label" for="motivation"><span data-i18n="f.motivation"></span> <span class="opt" data-i18n="f.optional"></span></label>
+              <textarea class="input" id="motivation" name="motivation" maxlength="1000" rows="4" data-i18n-placeholder="f.motivation.ph"></textarea>
+            </div>
+
+            <div class="field field--full">
+              <label class="label" for="source"><span data-i18n="f.source"></span> <span class="opt" data-i18n="f.optional"></span></label>
+              <select class="input" id="source" name="source">
+                <option value="" data-i18n="f.choose"></option>
+                <option value="social-media" data-i18n="f.src.social"></option>
+                <option value="friend" data-i18n="f.src.friend"></option>
+                <option value="poster" data-i18n="f.src.poster"></option>
+                <option value="club-event" data-i18n="f.src.event"></option>
+                <option value="teacher" data-i18n="f.src.teacher"></option>
+                <option value="other" data-i18n="f.src.other"></option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Honeypot: invisible to people, bots fill it in -->
+        <div class="hp" aria-hidden="true">
+          <label for="website">Website</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="field consent" data-name="consent">
+          <label class="check">
+            <input type="checkbox" id="consent" name="consent" required aria-describedby="consent-error">
+            <span data-i18n="f.consent"></span>
+          </label>
+          <p class="field__error" id="consent-error"></p>
+        </div>
+
+        <div class="form-footer">
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <button class="btn btn--primary" type="submit">
+            <span class="btn__label" data-i18n="f.submit"></span>
+            <span class="btn__label btn__label--sending" data-i18n="f.sending"></span>
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Success state -->
+      <div id="success" class="success" tabindex="-1" hidden>
+        <svg class="sprout" viewBox="0 0 120 150" aria-hidden="true">
+          <path pathLength="1" d="M60 140 C60 118 58 96 60 66"/>
+          <path pathLength="1" d="M60 100 C40 100 26 86 24 66 C44 66 58 78 60 100 Z"/>
+          <path pathLength="1" d="M60 80 C62 54 78 40 100 38 C100 60 84 76 60 80 Z"/>
+          <path pathLength="1" d="M26 140 H94"/>
+          <circle cx="24" cy="66" r="3"/>
+          <circle cx="100" cy="38" r="3"/>
+          <circle cx="60" cy="66" r="2.4"/>
+        </svg>
+        <p class="eyebrow" data-i18n="ok.eyebrow"></p>
+        <h2 class="display success__title"><span data-i18n="ok.title"></span> <em id="success-name"></em></h2>
+        <p class="lead success__lead" data-i18n="ok.text"></p>
+        <div class="success__actions">
+          <a class="btn btn--primary" href="index.html" data-i18n="ok.home"></a>
+          <button class="btn btn--ghost" type="button" data-register-again data-i18n="ok.again"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__bottom" style="margin-top:0;padding-top:0;border-top:0">
+      <span>© <span data-year>2026</span> AI INNOVATORS · <span data-i18n="footer.school"></span></span>
+      <span data-i18n="footer.theme"></span>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/atmosphere.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>
