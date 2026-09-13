@@ -6,6 +6,7 @@
  * Setup steps: see README.md → "Connect the Google Sheet".
  */
 
+const SPREADSHEET_ID = '1O6SRWycF5f1MvzkLL1B9hsnmaaiIXRa0HhtjoIVNCYk';
 const SHEET_NAME = 'Members';
 
 // Column order in the sheet. [header, form field]
@@ -28,11 +29,8 @@ const COLUMNS = [
 
 // Turns the form's codes into readable labels in the sheet.
 const LABELS = {
-  department: {
-    'cs': 'Computer science', 'engineering': 'Engineering', 'life-sciences': 'Biology & environment',
-    'math-physics': 'Maths & physics', 'business': 'Business & management', 'design': 'Design & communication', 'other': 'Other'
-  },
-  year: { 'year-1': '1st year', 'year-2': '2nd year', 'year-3': '3rd year', 'year-4': '4th year', 'year-5': '5th year +' },
+  department: { 'mechanical': 'Mechanical engineering', 'civil': 'Civil engineering', 'industrial': 'Industrial engineering' },
+  year: { 'year-1': '1st year', 'year-2': '2nd year', 'year-3': '3rd year' },
   interests: {
     'nature-detective': 'AI Nature Detective', 'plant-doctor': 'Plant Doctor', 'beach-pollution': 'AI Beach Pollution Detector',
     'waste-classifier': 'AI Waste Classifier', 'green-city': 'AI Green City', 'certifications': 'AI certifications'
@@ -98,7 +96,7 @@ function doGet() {
 }
 
 function getSheet() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
   const sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(COLUMNS.map(function (c) { return c[0]; }));

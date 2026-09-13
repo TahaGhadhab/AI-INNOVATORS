@@ -55,13 +55,14 @@ Until this is done, the form runs in **demo mode**: it validates and shows the s
 1. Create a Google Sheet, e.g. "AI INNOVATORS · Members 2026-27", in the club's Google account.
 2. In the Sheet, open **Extensions → Apps Script**.
 3. Delete the sample code, paste the contents of `apps-script/Code.gs`, and save.
-4. Click **Deploy → New deployment**, choose the type **Web app**, and set:
+4. In `Code.gs`, set `SPREADSHEET_ID` (top of the file) to your sheet's ID: the long string in its URL, `https://docs.google.com/spreadsheets/d/`**`THIS_PART`**`/edit`. The script uses `openById()` rather than "the active sheet" because a deployed web app has no active sheet to bind to.
+5. Click **Deploy → New deployment**, choose the type **Web app**, and set:
    - *Execute as*: **Me**
    - *Who has access*: **Anyone**
-5. Click **Deploy** and authorize the permissions.
-6. Copy the **Web app URL** (it ends in `/exec`).
-7. Paste it into `APPS_SCRIPT_URL` at the top of `js/register.js`.
-8. Test by submitting the form. A **Members** tab appears with one row per registration.
+6. Click **Deploy** and authorize the permissions.
+7. Copy the **Web app URL** (it ends in `/exec`).
+8. Paste it into `APPS_SCRIPT_URL` at the top of `js/register.js`.
+9. Test by submitting the form. A **Members** tab appears with one row per registration.
 
 Behavior of the script:
 - It rejects emails that are already registered; the form shows a "déjà inscrit / already registered" message.
@@ -72,17 +73,23 @@ If you edit `Code.gs` later, go to **Deploy → Manage deployments → Edit → 
 
 ## Deploy
 
-**GitHub Pages:** push the folder to a repository, then go to **Settings → Pages → Deploy from branch → main / root**.
+Live at:
+- **https://aiinnovators.vercel.app** (primary)
+- https://ai-innovators-kappa.vercel.app
 
-**Netlify:** drag and drop the folder onto <https://app.netlify.com/drop>.
+Deployed via Vercel, connected to the GitHub repo [`TahaGhadhab/AI-INNOVATORS`](https://github.com/TahaGhadhab/AI-INNOVATORS). Every push to `main` redeploys automatically within about a minute. `.vercelignore` keeps `Verdance.html`, `activities.md`, `apps-script/` and `README.md` off the live site (they stay in the repo).
+
+To deploy elsewhere instead: drag the folder onto <https://app.netlify.com/drop>, or push to a repo and enable **GitHub Pages** under **Settings → Pages → Deploy from branch**.
 
 ## TODO: replace the placeholders
 
 Search for `TODO` in the project:
 
 - [ ] College name: `footer.school` in `js/translations.js`
-- [ ] Real numbers in `about.stats`
+- [ ] Real member count in `about.stats`
 - [ ] Program dates and events in `program.seasons`
-- [ ] Contact email and Instagram / LinkedIn / Discord links in the footer of `index.html`
-- [ ] `APPS_SCRIPT_URL` in `js/register.js`
-- [ ] (Optional) a club logo to replace the leaf icon in the nav and footer, and `assets/img/favicon.svg`
+
+Done already:
+- [x] `APPS_SCRIPT_URL` in `js/register.js` (points at the live Apps Script deployment)
+- [x] Club logo: `assets/img/logo.webp`, plus `favicon-64.png`, `apple-touch-icon.png`, `og-image.jpg`
+- [x] Contact email in the footer of `index.html`

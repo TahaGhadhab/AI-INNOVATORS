@@ -8,7 +8,7 @@
   /* ---------------- CONFIG ---------------- */
   // Paste your Google Apps Script web app URL here (see README → "Connect the Google Sheet").
   // While empty, the form runs in DEMO MODE: it validates and shows success without saving anything.
-  const APPS_SCRIPT_URL = '';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw30geY3UxXz03Ok3o6yostnpQ-On9lk0sjM9r_FQMulHmbz8zNomvnQs4eD_UW0bjX/exec';
   // Set to your college's email domain (e.g. 'univ-example.edu') to accept only student emails.
   const EMAIL_DOMAIN = '';
   /* ---------------------------------------- */
